@@ -26,7 +26,7 @@ So for simplicity's sake, I wrote this python script and also made a .exe versio
 - Python 3.7+ installed
 
 **Steps:**
-1. Clone or download this repository or the python file:
+1. Download the python file either with the webui or with commands:
    ```bash
    git clone https://github.com/yourusername/Cheater-Cleaner.git
    cd Cheater-Cleaner
