@@ -29,7 +29,6 @@ So for simplicity's sake, I wrote this python script and also made a .exe versio
 1. Download the python file either with the webui or with commands:
    ```bash
    git clone https://github.com/andrew36999/B-E5-Save-Cleaner.git
-   cd Cheater-Cleaner
    ```
 
 2. Run the script:
