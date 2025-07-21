@@ -10,8 +10,6 @@ Program which removes the CHEATER mark from a Brigade E5: New Jagged Union save 
 
 ## Features
 
-## Features
-
 - Clean save files to remove the CHEATER flag
 - Creates timestamped backups before modifying files
 - Simple GUI interface for easy use
