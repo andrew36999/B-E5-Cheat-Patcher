@@ -6,8 +6,6 @@ It turns out the two variables are `WasDC` in the first few lines of a zlib comp
 
 So for simplicity's sake, I wrote this python script and also made a .exe version.
 
-Program which removes the CHEATER mark from a Brigade E5: New Jagged Union save file by editing two variables.
-
 ## Features
 
 - Clean save files to remove the CHEATER flag
