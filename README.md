@@ -1,6 +1,6 @@
 # Cheater-Cleaner
 
-Tired of the CHEATER label in your playthrough? Me too. So I spent 5 hours of my time figuring out what variables make the CHEATER label stick.
+Tired of the CHEATER label in your playthrough? Me too. So I spent 8 hours of my time figuring out what variables make the CHEATER label stick.
 
 It turns out the two variables are `WasDC` in the first few lines of a zlib compressed save in either of the streams (they shift) and the number in the `Console_end` variable. The number can range from 3000 to 6000 to 30000, it doesn't seem to matter, only specific numbers hit so there is no > or <, there are specific numbers which trigger the CHEATER label and make it more complex then simply deleting the WasDC line.
 
