@@ -6,10 +6,13 @@ It turns out the two variables are `WasDC` in the first few lines of a zlib comp
 
 So for simplicity's sake, I wrote this python script and also made a .exe version.
 
+
 ## Features
 
-- Clean save files to remove the CHEATER flag
+- Clean save files to remove the CHEATER flag using a cycle-safe method
+- Captures clean encryption blocks from valid saves
 - Creates timestamped backups before modifying files
+- Two-step process ensures 100% consistent results
 - Simple GUI interface for easy use
 - Supports `.nsv` save file formats
 
@@ -26,40 +29,52 @@ So for simplicity's sake, I wrote this python script and also made a .exe versio
 - Python 3.7+ installed
 
 **Steps:**
-1. Download the python file either with the webui or with commands:
+1. Download the python file either with the web UI or with commands:
    ```bash
-   git clone https://github.com/andrew36999/B-E5-Save-Cleaner.git
+   git clone https://github.com/andrew36999/Cheater-Cleaner.git
    ```
 
 2. Run the script:
    ```bash
-   python E5_Cheat_Patcher.py
+   python E5_Save_Cleaner.py
    ```
 
 ## Usage
 
-1. Launch the application (either `E5_Save_Cleaner.exe` or `python E5__Save_Cleaner.py`)
-2. Click "Choose Save Folder" and select your Brigade E5 saves directory (It is the game folder inside your Steam directroy called "Saves")
-3. Select a save file from the list (supports `.nsv` formats)
-4. Click "Patch Selected" to clean the file
-5. The tool will create a timestamped backup and patch the original file
+**Important: Turn off Steam Cloud in the game properties before starting!**
+
+### Step-by-Step Process:
+
+1. Launch the application (either `E5_Save_Cleaner.exe` or `python E5_Save_Cleaner.py`)
+2. **Pause your game** (this is crucial!)
+3. Create a clean save (without cheats) while paused
+4. Click "**Catch Encryption Cycle**" and select your clean save file
+5. Now cheat in your game and create another save while still paused
+6. Click "**Clean Cheated Save**" and select your cheated save file
+7. The tool will create a timestamped backup and patch the original file
+
+**Note:** The game must remain paused during the entire process for this method to work correctly. The save directory is typically located in your Steam directory under the game folder called "Saves".
 
 
 ## How It Works
 
+The tool uses a revolutionary **cycle-safe method** that captures the encryption pattern from clean saves:
+
+### Two-Step Process:
+1. **Catch Encryption Cycle**: Captures the clean `ConsoleInfo` block from a valid, non-cheated save
+2. **Clean Cheated Save**: Applies the captured clean block to remove cheating markers
+
+### Technical Details:
 The tool modifies two specific variables that trigger the CHEATER flag:
 
 1. **`WasDC` lines**: Removes any lines matching `WasDC` (debug/cheat detection markers) from zlib compressed streams
-2. **`Console_end` variable**: Replaces the console information block with clean values:
-   ```
-   ConsoleInfo  0 0.4 0
-   Console_end  6160
-   ```
+2. **`Console_end` variable**: Replaces the entire console information block with the captured clean values from your own save file
 
-The specific numbers in `Console_end` can range from 3000 to 30000, but only certain values trigger the CHEATER flag. Rather than trying to determine safe values, the tool uses known clean values that work consistently.
+This method ensures the encryption cycle matches your specific game instance, making it **100% consistently working** across different save files and game states.
 
 All other save data and game progress is preserved exactly as-is.
-This method was tested many times with different save files and is now 100% consistently working!
+
+**This method was tested many times with different save files and is now 100% consistently working!**
 
 ## Compatibility
 
