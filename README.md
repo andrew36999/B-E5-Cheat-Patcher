@@ -1,4 +1,4 @@
-# Cheater-Cleaner
+# Save Cleaner
 
 Tired of the CHEATER label in your playthrough? Me too. So I spent 8 hours of my time figuring out what variables make the CHEATER label stick.
 
