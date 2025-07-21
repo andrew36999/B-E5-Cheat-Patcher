@@ -28,7 +28,7 @@ So for simplicity's sake, I wrote this python script and also made a .exe versio
 **Steps:**
 1. Download the python file either with the webui or with commands:
    ```bash
-   git clone https://github.com/yourusername/Cheater-Cleaner.git
+   git clone https://github.com/andrew36999/B-E5-Save-Cleane.git
    cd Cheater-Cleaner
    ```
 
